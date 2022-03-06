@@ -1,0 +1,21 @@
+Q1. WHat is Amazon EC2? 
+A. EC2 is a short for Elastic Compute Cloud, and it provides scalable computing capacity. Using Amazon EC2 eliminates the need to invest in hardware, leading to faster development and deployment of applications. It is used to launch as many as few virtual servers as needed, configure security and netrowking, and managing storage.
+
+Q2. WHat types of performance can you expect from Elastic Block Storage?
+A. Amazon Elastic Block Store (EBS) provides permanent block storage volumes for EC2 instances. An EBS - optimized EC2 instance provides dedicated network throughput for volumes. Amazon EBS is tightly integrated with EC2 instances providing high performance, low latency block storage and is designed for 99.999% availability.
+   Amazon EBS volumes are placed in a single availability zone, in which they are automatically replicated to avoid from single component failure.
+   In order to understand the performance factor of EBS, one should consider the following two categories:
+   a) SSD (Solid State Drives) backed storage: -It is mainly used for latency-sensitive transactional workloads, such as databases, and boot volumes (a performance which mainly depends on IOPS).
+   b) HDD (Hard Disk Drives) backed storage:- It is mainly used for throughput-intensive workloads, such as MapReduce, log processing and big data warehousing.
+   
+   Backup:-To backup the EBS volumes, a point-in-time snapshot of an EBS volume can be taken. Snapshots are incremental, which means only the blocks on your device that have changed after the last snapshot, are saved in the new snapshot. Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that are created from encrypted snapshots are also automatically encrypted. You can even share your snapshots with specific AWS accounts, or you can share with the entire AWS community by making the snapshots public.
+   Performance:- When we access the first block on a new EBS volume that was restored from a snapshot, there is a significant increase in the latency. In order to avoid this performance degradation, it is better to access each block before putting the volume into production. This is called initialization.
+   
+   One of the capabilities of EBS is that it can dynamically extend its volume capacity and change the type of volume with no downtime or any performance impact. The Elastic Volumes feature makes it easy to modify your resources according to the changing needs of the application.
+
+Q3. How are terminating and stopping an instance different processes?
+A. Instance performs a regular shut down when it is stopped. It then performs transations. As the entire EBS volumes remain persent, it is possbile to start the instance anytime again when you want. The best thing is when the instance remains in the stopped state, users don't need to pay for that particular time.
+   Upon termination, the instance performs a regular shutdown. After this, the Amazon EBS volumes start deleting. You can stop them from deleting by setting the "Delete on Termination" to false. Because the instance gets deleted, it is not possbile to run it again in the future.
+   
+
+
