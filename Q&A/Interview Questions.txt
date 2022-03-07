@@ -17,5 +17,46 @@ Q3. How are terminating and stopping an instance different processes?
 A. Instance performs a regular shut down when it is stopped. It then performs transations. As the entire EBS volumes remain persent, it is possbile to start the instance anytime again when you want. The best thing is when the instance remains in the stopped state, users don't need to pay for that particular time.
    Upon termination, the instance performs a regular shutdown. After this, the Amazon EBS volumes start deleting. You can stop them from deleting by setting the "Delete on Termination" to false. Because the instance gets deleted, it is not possbile to run it again in the future.
    
+Q4. What is the difference between an on-demand instance and a Spot Instance.
+A. 
+
+Q5. How to vertically scale on an Amazon Instance?
+A.  To scale vertically we have to follow certain steps as below.
+      a) Spin up a larger Amazon instance than the existing one
+      b) Pause the existing instance to remove the root EBS volume from the server and discard.
+      c) Stop the live running instance and detach its root volume.
+      d) Make a not of the unique device ID and attach that root volume to the new server.
+      e) Start the instance again.
+      
+Q6. What is the difference between Vertical and Horizontal scaling?
+A.  The main difference between vertical and horizantal scaling is the way in which you add compute resources to your infrastructure. In vertical scaling more power is added to the existing machine while in horizantal scaling additional resources are added into the system with the addition of more machines into the network so that the workload and processing is shared among multiple devices.
+Example : When there are upto 100 users, an EC2 instance alone is enough to run the entire web application or the database until the traffic ramps us. However when the application grows to 1000 users vertical cannot handle requests and there is need for horizantal scaling.
+
+Q7. WHen instances are launched in the cluster placement group, what are the network performance parameters that can be expected?
+A. 
+
+Q8. What is Amazon VPC?
+A. A VPC (Virtual Private Cloud) i sthe best way of connecting to your cloud resources from your own data center. Once you connect your datacenter to the VPC in which your instances are present, each instance is assigned a private IP address that can be accessed from your data center.
+
+Q9. Whar are the states availabl in PRocessor State Control?
+A. P-state ==> It has different levels startting from P0 to P15.
+   C-State ==> Its levels are from C0 to C-6 where C6 is the strongest state for the processor.
+   
+Q10. How to transfer an existing domain name registration to Amazon Route 52 whithout disrupting existing web traffic?
+A. You will need to get a list of the DNS record data fro your domain name first, it is generally available in the form of a "zone file" that you can get from your existing DNS provider. Once you receive the DNS record data, you can use ROute 53 Management COuncil or Simple web services intseface to create a hosted zone that will store your DNS records for your domain name and follow its transfer process. It also includes steps such as updating the nameservers for your domain name to the ones associated with your hosted zone.
+
+Q11. How is AWS Elastic Beanstalk different than AWS OpsWorks?
+A. AWS ELastic Beanstalk is an application management platform while OpsWorks is a configuration management platform.
+   Beanstalk is an easy to use service which is used for deploying and scaling web applications developed with Java, Dot Net, PHP, Node.js, Python, Go and DOcker.
+   
+Q12. What happens if the applications stops responding to requests in beanstalk?
+A. AWS Beanstalk applications have a system in place for avoding failures in the underlying infrastructure. If an Amazon EC2 instance fails for any reason, Beanstalk will use Auto Scaling to automatically launch a new instance. Beanstalk can also detect of your application is not responding on the custom link, even though the infrastructure appeasrs healthy, it will be logged as an environmental event so you can take an appropriate action.
+
+Q13. An Organization wants to deploy a two-tier web applications on AWS. The application requires complex query processing and table joins. However, the company has limited resources and requires high availibality. WHich is the best configuration that company can opt for based on the requirements?
+A. DynamoDB deals with core problems of database scalability, management, reliability and performance but does not have the functionalities of a RBDMS. DYnamoDB does not render support for complex joins or query processing or complex transactions. You can run a relational engine on Amazon RDS or EC2 for this kind of a functionality.
+
+Q14. 
+
+
 
 
