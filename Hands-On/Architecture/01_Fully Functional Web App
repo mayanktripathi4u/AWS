@@ -1,0 +1,15 @@
+Architecture of AWS Services for this Project
+  EC2 Instance
+  ELB
+  Autoscaling
+  EFS / S3
+  RDS
+  Elastic Cache
+  Active MQ
+  Route 53
+  CloudFront
+  ElasticBeanStalk
+  
+Step 1: Create a Key-Pairs for EC2 Instances.
+Step 2 : Create Security Group.
+  
